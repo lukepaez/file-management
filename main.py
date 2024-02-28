@@ -1,12 +1,12 @@
-import os
+from cleaner import clean_folder
+import typer
+
+app = typer.Typer()
+
+@app.command()
+def clean_dir(dir_path: str):
+    clean_folder(dir_path)
+
 
 if __name__ == "__main__":
-    print(f"Starting file-management...\n")
-
-    my_path = '/Users/lukepaez/Downloads'
-
-    if os.path.isdir(my_path):
-        print(f"Directory exists!")
-    else:
-        print(f"Directory not found!")
-    
+    app()
